@@ -1,11 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import and_ 
 from genera_tablas import Establecimiento, Parroquia, Provincia, Canton
 from configuracion import cadena_base_datos
 # se genera enlace al gestor de base de datos para el ejemplo se usa la base de datos sqlite
 
 engine = create_engine(cadena_base_datos)
+Session = sessionmaker(bind=engine)
+session = Session()
 
+establecimiento = session.query(Establecimiento).all()
+engine = create_engine(cadena_base_datos)
 
 Session = sessionmaker(bind=engine)
 session = Session()
