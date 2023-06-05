@@ -9,7 +9,6 @@ from configuracion import cadena_base_datos
 
 engine = create_engine(cadena_base_datos)
 
-
 Session = sessionmaker(bind=engine)
 session = Session()
 # Los cantones que tiene establecimientos con 0 número de profesores, 5 profesores, 11, profesores
